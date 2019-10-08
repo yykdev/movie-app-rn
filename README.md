@@ -26,4 +26,4 @@
 
 ### 추가 라이브러리 셋팅
 
-yarn add prop-types styled-components axios @expo/vector-icons expo-font react-navigation
+yarn add prop-types styled-components axios @expo/vector-icons expo-font react-navigation react-navigation-tabs
