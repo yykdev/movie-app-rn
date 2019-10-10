@@ -23,8 +23,8 @@ export default class MoviesContainer extends React.Component {
             ({
                 data: { results: nowPlaying }
             } = await movies.getNowPlaying());
-        } catch (error) {
-            error = `[ Can't get Movies ] ${error}`;
+        } catch {
+            error = "Can't get Movies";
         } finally {
             this.setState({
                 loading: false,
