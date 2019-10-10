@@ -26,4 +26,4 @@
 
 ### 추가 라이브러리 셋팅
 
-yarn add prop-types styled-components axios @expo/vector-icons expo-font react-navigation react-navigation-tabs react-native-reanimated react-native-gesture-handler@1.3.0 react-native-screens@1.0.0 react-navigation-stack axios
+yarn add prop-types styled-components axios @expo/vector-icons expo-font react-navigation react-navigation-tabs react-native-reanimated react-native-gesture-handler@1.3.0 react-native-screens@1.0.0 react-navigation-stack axios@0.18.0
