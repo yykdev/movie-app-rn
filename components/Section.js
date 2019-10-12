@@ -11,11 +11,13 @@ const Title = styled.Text`
     color: white;
     font-weight: 600;
     padding-left: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 12px;
 `;
 
-const ScrollView = styled.ScrollView``;
+const ScrollView = styled.ScrollView`
+    padding-left: 20px;
+`;
 
 const Section = ({ title, movies }) => (
     <Container>
