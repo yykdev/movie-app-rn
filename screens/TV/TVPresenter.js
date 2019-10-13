@@ -32,7 +32,7 @@ const TVPresenter = ({ loading, popular, airingThisWeek, airingToday }) =>
                 </Section>
             ) : null}
             {airingThisWeek ? (
-                <Section title="Top Rated">
+                <Section title="Airing Week">
                     {airingThisWeek
                         .filter(tv => tv.poster_path !== null)
                         .map(tv => (
