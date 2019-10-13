@@ -26,6 +26,10 @@ const Section = ({ title, children }) => (
     </Container>
 );
 Section.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ]),
     title: PropTypes.string.isRequired
 };
 
