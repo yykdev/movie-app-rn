@@ -19,26 +19,13 @@ const ScrollView = styled.ScrollView`
     padding-left: 20px;
 `;
 
-const Section = ({ title, movies }) => (
+const Section = ({ title, children }) => (
     <Container>
         <Title>{title}</Title>
-        <ScrollView horizontal>
-            {movies
-                .filter(movie => movie.poster_path !== null)
-                .map(movie => (
-                    <MovieItem
-                        key={movie.id}
-                        id={movie.id}
-                        posterPhoto={movie.poster_path}
-                        title={movie.title}
-                        voteAvg={movie.vote_average}
-                    />
-                ))}
-        </ScrollView>
+        <ScrollView horizontal>{children}</ScrollView>
     </Container>
 );
 Section.propTypes = {
-    movies: PropTypes.array.isRequired,
     title: PropTypes.string.isRequired
 };
 
