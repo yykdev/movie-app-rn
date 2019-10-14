@@ -2,19 +2,19 @@
 
 ## [NomadCoders : [멤버십] 초보를 위한 React Native](https://academy.nomadcoders.co/p/react-native-for-beginners)
 
-#### [ ] - #0. Introduction
+#### [O] - #0. Introduction
 
-#### [ ] - #1. Set Up
+#### [O] - #1. Set Up
 
-#### [ ] - #2. React Navigation
+#### [O] - #2. React Navigation
 
-#### [ ] - #3. Networking / API
+#### [O] - #3. Networking / API
 
-#### [ ] - #4. Containers
+#### [O] - #4. Containers
 
-#### [ ] - #5. Sliders in React Native
+#### [O] - #5. Sliders in React Native
 
-#### [ ] - #6. Home / TV Presenters
+#### [O] - #6. Home / TV Presenters
 
 #### [ ] - #7. Search Screen
 
