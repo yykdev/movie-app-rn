@@ -4,6 +4,9 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { BG_COLOR, GREY_COLOR } from "../../constants/Colors";
 import Layout from "../../constants/Layout";
+import Loader from "../../components/Loader";
+import Section from "../../components/Section";
+import MovieItem from "../../components/MovieItem";
 
 const Container = styled.View`
     flex: 1;
@@ -21,6 +24,10 @@ const Input = styled.TextInput`
     border-radius: 20px;
     padding: 10px;
     text-align: center;
+`;
+
+const SearchResults = styled.ScrollView`
+    margin-top: 20px;
 `;
 
 const SearchPresenter = ({
@@ -43,6 +50,53 @@ const SearchPresenter = ({
                 autoCorrect={false}
             />
         </InputContainer>
+        <SearchResults>
+            {loading ? (
+                <Loader />
+            ) : (
+                <>
+                    {movieResults ? (
+                        movieResults.length > 0 ? (
+                            <Section title="Movie Results">
+                                {movieResults
+                                    .filter(movie => movie.poster_path !== null)
+                                    .map(movie => (
+                                        <MovieItem
+                                            key={movie.id}
+                                            id={movie.id}
+                                            posterPhoto={movie.poster_path}
+                                            title={movie.title}
+                                            voteAvg={movie.vote_average}
+                                            horizontal={true}
+                                            overview={movie.overview}
+                                        />
+                                    ))}
+                            </Section>
+                        ) : null
+                    ) : null}
+
+                    {tvResults ? (
+                        tvResults.length > 0 ? (
+                            <Section title="TV Results">
+                                {tvResults
+                                    .filter(tv => tv.poster_path !== null)
+                                    .map(tv => (
+                                        <MovieItem
+                                            key={tv.id}
+                                            id={tv.id}
+                                            posterPhoto={tv.poster_path}
+                                            title={tv.name}
+                                            voteAvg={tv.vote_average}
+                                            horizontal={true}
+                                            overview={tv.overview}
+                                        />
+                                    ))}
+                            </Section>
+                        ) : null
+                    ) : null}
+                </>
+            )}
+        </SearchResults>
     </Container>
 );
 
