@@ -28,6 +28,7 @@ const TVPresenter = ({ loading, popular, airingThisWeek, airingToday }) =>
                                 title={tv.name}
                                 voteAvg={tv.vote_average}
                                 overview={tv.overview}
+                                isMovie={false}
                             />
                         ))}
                 </Section>
@@ -44,6 +45,7 @@ const TVPresenter = ({ loading, popular, airingThisWeek, airingToday }) =>
                                 title={tv.name}
                                 voteAvg={tv.vote_average}
                                 overview={tv.overview}
+                                isMovie={false}
                             />
                         ))}
                 </Section>
@@ -60,6 +62,7 @@ const TVPresenter = ({ loading, popular, airingThisWeek, airingToday }) =>
                                 title={tv.name}
                                 voteAvg={tv.vote_average}
                                 overview={tv.overview}
+                                isMovie={false}
                             />
                         ))}
                 </Section>

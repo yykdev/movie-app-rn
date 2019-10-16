@@ -89,6 +89,7 @@ const SearchPresenter = ({
                                             voteAvg={tv.vote_average}
                                             horizontal={true}
                                             overview={tv.overview}
+                                            isMovie={false}
                                         />
                                     ))}
                             </Section>

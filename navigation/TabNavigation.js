@@ -49,7 +49,7 @@ const TabNavigation = createBottomTabNavigator(
         }
     },
     {
-        initialRouteName: "Search",
+        initialRouteName: "Movie",
         tabBarOptions: {
             showLabel: false,
             style: {
