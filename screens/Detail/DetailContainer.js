@@ -40,18 +40,61 @@ export default class DetailContainer extends React.Component {
         };
     }
 
+    async componentDidMount() {
+        const { isMovie, id } = this.state;
+        let error, genres, overview, status, date, backgroundPhoto;
+        try {
+            if (isMovie) {
+                ({
+                    data: {
+                        overview,
+                        status,
+                        genres,
+                        release_date: date,
+                        backdrop_path: backgroundPhoto
+                    }
+                } = await movies.getMovie(id));
+            } else {
+                ({
+                    data: {
+                        overview,
+                        status,
+                        genres,
+                        first_air_date: date,
+                        backdrop_path: backgroundPhoto
+                    }
+                } = await tv.getShow(id));
+            }
+        } catch {
+        } finally {
+            this.setState({
+                loading: false,
+                genres,
+                backgroundPhoto,
+                overview,
+                status,
+                date
+            });
+        }
+    }
+
     render() {
         const {
+            isMovie,
             id,
             posterPhoto,
             backgroundPhoto,
             title,
             voteAvg,
             overview,
-            loading
+            loading,
+            status,
+            date,
+            genres
         } = this.state;
         return (
             <DetailPresenter
+                isMovie={isMovie}
                 id={id}
                 posterPhoto={posterPhoto}
                 backgroundPhoto={backgroundPhoto}
@@ -59,6 +102,9 @@ export default class DetailContainer extends React.Component {
                 voteAvg={voteAvg}
                 overview={overview}
                 loading={loading}
+                status={status}
+                date={date}
+                genres={genres}
             />
         );
     }
