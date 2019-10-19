@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Text } from "react-native";
 import DetailPresenter from "./DetailPresenter";
+import { movies, tv } from "../../api";
 
 export default class DetailContainer extends React.Component {
     static navigationOptions = ({ navigation }) => {
@@ -16,6 +17,7 @@ export default class DetailContainer extends React.Component {
             navigation: {
                 state: {
                     params: {
+                        isMovie,
                         id,
                         posterPhoto,
                         backgroundPhoto,
@@ -27,12 +29,14 @@ export default class DetailContainer extends React.Component {
             }
         } = props;
         this.state = {
+            isMovie,
             id,
             posterPhoto,
             backgroundPhoto,
             title,
             voteAvg,
-            overview
+            overview,
+            loading: true
         };
     }
 
@@ -43,7 +47,8 @@ export default class DetailContainer extends React.Component {
             backgroundPhoto,
             title,
             voteAvg,
-            overview
+            overview,
+            loading
         } = this.state;
         return (
             <DetailPresenter
@@ -52,7 +57,8 @@ export default class DetailContainer extends React.Component {
                 backgroundPhoto={backgroundPhoto}
                 title={title}
                 voteAvg={voteAvg}
-                overview
+                overview={overview}
+                loading={loading}
             />
         );
     }
